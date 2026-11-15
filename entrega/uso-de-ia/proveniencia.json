@@ -1,25 +1,7 @@
 {
   "sessoes": [
     {
-      "arquivo": "sessao-01-planejamento.md",
-      "titulo": "Planejamento e acompanhamento",
-      "session_id": "01a1e145-4125-72a1-bdc8-c15a612191fe",
-      "source_file": "rollout-2026-11-15T19-12-54-01a1e145-4125-72a1-bdc8-c15a612191fe.jsonl",
-      "source_sha256_at_snapshot": "031087e21000b18f0d0019dd3ed25c1b4ba10def5b08f1a5f1da84330f0938af",
-      "export_sha256": "30a0a8856ceffc3ac926ac53766fa07e7d2e503a40f9a3a65afa7c2a9e704cde",
-      "model_identifiers": [
-        "gpt-6.1-sol"
-      ],
-      "originator": "codex-tui",
-      "source": "vscode",
-      "cli_version": "0.167.0",
-      "snapshot_cutoff_utc": "2026-11-15T23:16:09.519Z",
-      "user_assistant_messages_in_source_excluding_environment": 30,
-      "format": "log consolidado de mensagens reais",
-      "em_andamento": false
-    },
-    {
-      "arquivo": "sessao-02-investigacao.md",
+      "arquivo": "sessao-01-investigacao.md",
       "titulo": "Investigação inicial",
       "session_id": "01a1e14d-171d-7cc0-8301-7fc20c4c71e2",
       "source_file": "rollout-2026-11-15T19-21-28-01a1e14d-171d-7cc0-8301-7fc20c4c71e2.jsonl",
@@ -37,7 +19,7 @@
       "em_andamento": false
     },
     {
-      "arquivo": "sessao-03-implementacao-e-entrega.md",
+      "arquivo": "sessao-02-implementacao-e-entrega.md",
       "titulo": "Implementação, validação e entrega em andamento",
       "session_id": "01a1e168-d323-7601-943d-6461902096aa",
       "source_file": "rollout-2026-11-15T19-51-45-01a1e168-d323-7601-943d-6461902096aa.jsonl",
