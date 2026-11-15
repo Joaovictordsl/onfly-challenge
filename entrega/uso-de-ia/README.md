@@ -1,6 +1,6 @@
 # Registros reais de uso de IA
 
-Foram localizadas três conversas com conteúdo relacionado ao desafio nos registros locais do Codex. A conversa inicial de planejamento foi incluída porque contribuiu com o roteiro e os prompts usados nas etapas seguintes.
+Foram localizadas duas conversas com conteúdo relacionado ao desafio nos registros locais do Codex. A conversa inicial de planejamento foi incluída porque contribuiu com o roteiro e os prompts usados nas etapas seguintes.
 
 | Arquivo | Conteúdo e origem | Situação |
 |---|---|---|
