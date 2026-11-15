@@ -1,0 +1,10 @@
+{
+  "python": "3.11.18 (main, Nov  5 2026, 07:57:53) [GCC 14.2.0]",
+  "platform": "Linux-6.12.54-linuxkit-x86_64-with-glibc2.41",
+  "pytest": "8.3.4",
+  "source_read_only": true,
+  "network": "none",
+  "suite": "21 passed",
+  "comparacao_amostra_readme": true,
+  "comparacao_principal_independente": true
+}

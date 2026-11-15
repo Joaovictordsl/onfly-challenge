@@ -1,0 +1,166 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+____________________ test_top_hotels_are_ranked_descending _____________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-9/test_top_hotels_are_ranked_des0')
+
+    def test_top_hotels_are_ranked_descending(tmp_path):
+        """O ranking mostra os hotéis de maior valor primeiro."""
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "hotel_id": "H01", "hotel_name": "Hotel A", "amount": "1000.00"},
+                {"reservation_id": "R-2", "hotel_id": "H02", "hotel_name": "Hotel B", "amount": "900.00"},
+                {"reservation_id": "R-3", "hotel_id": "H03", "hotel_name": "Hotel C", "amount": "800.00"},
+                {"reservation_id": "R-4", "hotel_id": "H04", "hotel_name": "Hotel D", "amount": "700.00"},
+            ],
+            top=3,
+        )
+>       assert [hotel["hotel_id"] for hotel in report["top_hotels"]] == ["H01", "H02", "H03"]
+E       AssertionError: assert ['H04', 'H03', 'H02'] == ['H01', 'H02', 'H03']
+E         
+E         At index 0 diff: 'H04' != 'H01'
+E         Use -v to get more diff
+
+tests/test_top_hotels.py:18: AssertionError
+______ test_ranking_breaks_equal_brl_totals_by_hotel_id[1-expected_ids0] _______
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-9/test_ranking_breaks_equal_brl_0')
+top = 1, expected_ids = ['H03']
+
+    @pytest.mark.parametrize(
+        ("top", "expected_ids"),
+        [(1, ["H03"]), (2, ["H03", "H01"]), (10, ["H03", "H01", "H02"])],
+    )
+    def test_ranking_breaks_equal_brl_totals_by_hotel_id(tmp_path, top, expected_ids):
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "hotel_id": "H02", "currency": "USD", "amount": "100.00"},
+                {"reservation_id": "R-2", "hotel_id": "H01", "amount": "500.00"},
+                {"reservation_id": "R-3", "hotel_id": "H03", "amount": "600.00"},
+                {"reservation_id": "R-4", "hotel_id": "H01", "amount": "42.00"},
+            ],
+            top=top,
+        )
+    
+        expected_amounts = {"H01": "542.00", "H02": "542.00", "H03": "600.00"}
+>       assert [hotel["hotel_id"] for hotel in report["top_hotels"]] == expected_ids
+E       AssertionError: assert ['H01'] == ['H03']
+E         
+E         At index 0 diff: 'H01' != 'H03'
+E         Use -v to get more diff
+
+tests/test_ranking_rules.py:24: AssertionError
+______ test_ranking_breaks_equal_brl_totals_by_hotel_id[2-expected_ids1] _______
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-9/test_ranking_breaks_equal_brl_1')
+top = 2, expected_ids = ['H03', 'H01']
+
+    @pytest.mark.parametrize(
+        ("top", "expected_ids"),
+        [(1, ["H03"]), (2, ["H03", "H01"]), (10, ["H03", "H01", "H02"])],
+    )
+    def test_ranking_breaks_equal_brl_totals_by_hotel_id(tmp_path, top, expected_ids):
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "hotel_id": "H02", "currency": "USD", "amount": "100.00"},
+                {"reservation_id": "R-2", "hotel_id": "H01", "amount": "500.00"},
+                {"reservation_id": "R-3", "hotel_id": "H03", "amount": "600.00"},
+                {"reservation_id": "R-4", "hotel_id": "H01", "amount": "42.00"},
+            ],
+            top=top,
+        )
+    
+        expected_amounts = {"H01": "542.00", "H02": "542.00", "H03": "600.00"}
+>       assert [hotel["hotel_id"] for hotel in report["top_hotels"]] == expected_ids
+E       AssertionError: assert ['H01', 'H02'] == ['H03', 'H01']
+E         
+E         At index 0 diff: 'H01' != 'H03'
+E         Use -v to get more diff
+
+tests/test_ranking_rules.py:24: AssertionError
+______ test_ranking_breaks_equal_brl_totals_by_hotel_id[10-expected_ids2] ______
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-9/test_ranking_breaks_equal_brl_2')
+top = 10, expected_ids = ['H03', 'H01', 'H02']
+
+    @pytest.mark.parametrize(
+        ("top", "expected_ids"),
+        [(1, ["H03"]), (2, ["H03", "H01"]), (10, ["H03", "H01", "H02"])],
+    )
+    def test_ranking_breaks_equal_brl_totals_by_hotel_id(tmp_path, top, expected_ids):
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "hotel_id": "H02", "currency": "USD", "amount": "100.00"},
+                {"reservation_id": "R-2", "hotel_id": "H01", "amount": "500.00"},
+                {"reservation_id": "R-3", "hotel_id": "H03", "amount": "600.00"},
+                {"reservation_id": "R-4", "hotel_id": "H01", "amount": "42.00"},
+            ],
+            top=top,
+        )
+    
+        expected_amounts = {"H01": "542.00", "H02": "542.00", "H03": "600.00"}
+>       assert [hotel["hotel_id"] for hotel in report["top_hotels"]] == expected_ids
+E       AssertionError: assert ['H01', 'H02', 'H03'] == ['H03', 'H01', 'H02']
+E         
+E         At index 0 diff: 'H01' != 'H03'
+E         Use -v to get more diff
+
+tests/test_ranking_rules.py:24: AssertionError
+______________ test_ranking_uses_exact_totals_before_rounding[1] _______________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-9/test_ranking_uses_exact_totals0')
+top = 1
+
+    @pytest.mark.parametrize("top", [1, 2])
+    def test_ranking_uses_exact_totals_before_rounding(tmp_path, top):
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "hotel_id": "H01", "amount": "1.001"},
+                {"reservation_id": "R-2", "hotel_id": "H02", "amount": "1.004"},
+            ],
+            top=top,
+        )
+    
+>       assert [hotel["hotel_id"] for hotel in report["top_hotels"]] == ["H02", "H01"][:top]
+E       AssertionError: assert ['H01'] == ['H02']
+E         
+E         At index 0 diff: 'H01' != 'H02'
+E         Use -v to get more diff
+
+tests/test_ranking_rules.py:41: AssertionError
+______________ test_ranking_uses_exact_totals_before_rounding[2] _______________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-9/test_ranking_uses_exact_totals1')
+top = 2
+
+    @pytest.mark.parametrize("top", [1, 2])
+    def test_ranking_uses_exact_totals_before_rounding(tmp_path, top):
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "hotel_id": "H01", "amount": "1.001"},
+                {"reservation_id": "R-2", "hotel_id": "H02", "amount": "1.004"},
+            ],
+            top=top,
+        )
+    
+>       assert [hotel["hotel_id"] for hotel in report["top_hotels"]] == ["H02", "H01"][:top]
+E       AssertionError: assert ['H01', 'H02'] == ['H02', 'H01']
+E         
+E         At index 0 diff: 'H01' != 'H02'
+E         Use -v to get more diff
+
+tests/test_ranking_rules.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_top_hotels.py::test_top_hotels_are_ranked_descending - Asse...
+FAILED tests/test_ranking_rules.py::test_ranking_breaks_equal_brl_totals_by_hotel_id[1-expected_ids0]
+FAILED tests/test_ranking_rules.py::test_ranking_breaks_equal_brl_totals_by_hotel_id[2-expected_ids1]
+FAILED tests/test_ranking_rules.py::test_ranking_breaks_equal_brl_totals_by_hotel_id[10-expected_ids2]
+FAILED tests/test_ranking_rules.py::test_ranking_uses_exact_totals_before_rounding[1]
+FAILED tests/test_ranking_rules.py::test_ranking_uses_exact_totals_before_rounding[2]
+6 failed in 0.83s

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/pytest-temp",
+    "--junitxml",
+    "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/pytest.xml"
+  ],
+  "cwd": "/Users/joaovictordesousalima/Downloads/onfly-desafio",
+  "exit_code": 1,
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+  }
+}

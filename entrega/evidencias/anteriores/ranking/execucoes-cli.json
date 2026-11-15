@@ -1,0 +1,343 @@
+[
+  {
+    "case": "amostra com output e top padrão",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 12 | Confirmadas: 9 | Noites: 28 | Total BRL: 7566.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "--top 1",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--top",
+      "1"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 12 | Confirmadas: 9 | Noites: 28 | Total BRL: 7566.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "--top 2",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--top",
+      "2"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 12 | Confirmadas: 9 | Noites: 28 | Total BRL: 7566.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "--top 100",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--top",
+      "100"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 12 | Confirmadas: 9 | Noites: 28 | Total BRL: 7566.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "dataset principal e criação de diretórios",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/reservas_hoteis.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--output",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/nested/sub/report.json"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 300 | Confirmadas: 235 | Noites: 1347 | Total BRL: 396170.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "arquivo sem reservas",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/reservas.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 0 | Confirmadas: 0 | Noites: 0 | Total BRL: 0.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "somente status não faturáveis",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/reservas.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 3 | Confirmadas: 0 | Noites: 0 | Total BRL: 0.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "reserva sem noites",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/reservas.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "Reservas: 1 | Confirmadas: 1 | Noites: 0 | Total BRL: 1200.00\n",
+    "stderr": ""
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: onfly_report [-h] --input INPUT --rates RATES [--output OUTPUT]\n                    [--top TOP]\nonfly_report: error: the following arguments are required: --input, --rates\n"
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: onfly_report [-h] --input INPUT --rates RATES [--output OUTPUT]\n                    [--top TOP]\nonfly_report: error: the following arguments are required: --rates\n"
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: onfly_report [-h] --input INPUT --rates RATES [--output OUTPUT]\n                    [--top TOP]\nonfly_report: error: the following arguments are required: --input\n"
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--top",
+      "0"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: onfly_report [-h] --input INPUT --rates RATES [--output OUTPUT]\n                    [--top TOP]\nonfly_report: error: --top deve ser maior ou igual a 1\n"
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--top",
+      "-1"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: onfly_report [-h] --input INPUT --rates RATES [--output OUTPUT]\n                    [--top TOP]\nonfly_report: error: --top deve ser maior ou igual a 1\n"
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--top",
+      "abc"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "usage: onfly_report [-h] --input INPUT --rates RATES [--output OUTPUT]\n                    [--top TOP]\nonfly_report: error: argument --top: invalid int value: 'abc'\n"
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/ausente.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "2026-11-15 20:11:44,280 ERROR onfly_report falha ao ler a entrada: arquivo de reservas não encontrado: /var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/ausente.csv\n"
+  },
+  {
+    "case": "entrada/argumento inválido",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/ausente.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "2026-11-15 20:11:44,397 ERROR onfly_report falha ao ler a entrada: tabela de câmbio não encontrada: /var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/ausente.csv\n"
+  },
+  {
+    "case": "colunas ausentes",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/colunas.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "2026-11-15 20:11:44,518 ERROR onfly_report falha ao ler a entrada: colunas obrigatórias ausentes: reservation_id, traveler_name, company_id, hotel_id, hotel_name, city, country, checkin_date, checkout_date, rooms, status, currency, amount, payment_method, booked_at\n"
+  },
+  {
+    "case": "tipo inválido na reserva",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/reservas.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "2026-11-15 20:11:44,638 ERROR onfly_report falha ao ler a entrada: linha 2 inválida: invalid literal for int() with base 10: 'abc'\n"
+  },
+  {
+    "case": "taxa inválida",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/taxas.csv"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "2026-11-15 20:11:44,747 ERROR onfly_report falha ao ler a entrada: taxa inválida para BRL em /var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi/taxas.csv\n"
+  },
+  {
+    "case": "erro de escrita",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/exemplo-validacao.csv",
+      "--rates",
+      "/Users/joaovictordesousalima/Desktop/onfly-desafio/data/taxas_cambio.csv",
+      "--output",
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "2026-11-15 20:11:44,876 ERROR onfly_report falha ao escrever o relatório em /var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi\nTraceback (most recent call last):\n  File \"/Users/joaovictordesousalima/Desktop/onfly-desafio/src/onfly_report/cli.py\", line 55, in main\n    output_path.write_text(\n    ~~~~~~~~~~~~~~~~~~~~~~^\n        json.dumps(report, ensure_ascii=False, indent=2) + \"\\n\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        encoding=\"utf-8\",\n        ^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py\", line 555, in write_text\n    return PathBase.write_text(self, data, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py\", line 651, in write_text\n    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIsADirectoryError: [Errno 21] Is a directory: '/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi'\n"
+  },
+  {
+    "case": "ajuda",
+    "command": [
+      "/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--help"
+    ],
+    "cwd": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-contrato-ynd74rqi",
+    "returncode": 0,
+    "stdout": "usage: onfly_report [-h] --input INPUT --rates RATES [--output OUTPUT]\n                    [--top TOP]\n\nConsolida a exportação de reservas de hotel em um relatório JSON.\n\noptions:\n  -h, --help       show this help message and exit\n  --input INPUT    CSV de reservas\n  --rates RATES    CSV de taxas de câmbio para BRL\n  --output OUTPUT  caminho do relatório JSON\n  --top TOP        quantidade de hotéis no ranking\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "summary_corresponde": true,
+  "by_month_corresponde": true,
+  "valores_dos_cinco_hoteis_do_readme_correspondem": true,
+  "top_hotels_corresponde": false,
+  "ranking_esperado": [
+    "H01",
+    "H02",
+    "H12",
+    "H10",
+    "H09"
+  ],
+  "ranking_observado": [
+    "H08",
+    "H07",
+    "H11",
+    "H03",
+    "H09"
+  ]
+}

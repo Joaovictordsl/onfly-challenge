@@ -1,0 +1,111 @@
+[
+  {
+    "name": "venv",
+    "command": [
+      "/usr/local/bin/python",
+      "-m",
+      "venv",
+      "/tmp/onfly-venv"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "dependencias",
+    "command": [
+      "/tmp/onfly-venv/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "--no-index",
+      "--find-links",
+      "/wheels",
+      "pytest==8.3.4"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /wheels\nProcessing /wheels/pytest-8.3.4-py3-none-any.whl\nProcessing /wheels/iniconfig-2.0.0-py3-none-any.whl (from pytest==8.3.4)\nProcessing /wheels/packaging-24.2-py3-none-any.whl (from pytest==8.3.4)\nProcessing /wheels/pluggy-1.5.0-py3-none-any.whl (from pytest==8.3.4)\nInstalling collected packages: pluggy, packaging, iniconfig, pytest\nSuccessfully installed iniconfig-2.0.0 packaging-24.2 pluggy-1.5.0 pytest-8.3.4\n",
+    "stderr": ""
+  },
+  {
+    "name": "versoes",
+    "command": [
+      "/tmp/onfly-venv/bin/python",
+      "-c",
+      "import sys, pytest; print(sys.version); print('pytest', pytest.__version__)"
+    ],
+    "returncode": 0,
+    "stdout": "3.11.18 (main, Nov  5 2026, 07:57:53) [GCC 14.2.0]\npytest 8.3.4\n",
+    "stderr": ""
+  },
+  {
+    "name": "pytest",
+    "command": [
+      "/tmp/onfly-venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "/tmp/onfly-pytest"
+    ],
+    "returncode": 0,
+    "stdout": ".....................                                                    [100%]\n21 passed in 7.58s\n",
+    "stderr": ""
+  },
+  {
+    "name": "cli-principal",
+    "command": [
+      "/tmp/onfly-venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--rates",
+      "data/taxas_cambio.csv",
+      "--input",
+      "data/reservas_hoteis.csv",
+      "--output",
+      "/evidence/report.json"
+    ],
+    "returncode": 0,
+    "stdout": "Reservas: 300 | Confirmadas: 235 | Noites: 1347 | Total BRL: 396170.00\n",
+    "stderr": ""
+  },
+  {
+    "name": "calculo-independente",
+    "command": [
+      "/tmp/onfly-venv/bin/python",
+      "entrega/evidencias/conferir_relatorio.py",
+      "--input",
+      "data/reservas_hoteis.csv",
+      "--rates",
+      "data/taxas_cambio.csv",
+      "--report",
+      "/evidence/report.json",
+      "--reference",
+      "/evidence/referencia-independente.json",
+      "--comparison",
+      "/evidence/comparacao-principal.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"summary\": {\n    \"total_reservations\": 300,\n    \"confirmed_reservations\": 235,\n    \"cancelled_reservations\": 31,\n    \"no_show_reservations\": 34,\n    \"total_room_nights\": 1347,\n    \"total_amount_brl\": \"396170.00\",\n    \"average_nightly_rate_brl\": \"294.11\"\n  },\n  \"comparacao\": {\n    \"report_version\": true,\n    \"summary\": true,\n    \"by_month\": true,\n    \"top_hotels\": true,\n    \"schema_raiz\": true,\n    \"offset_minus_03\": true\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "cli-amostra",
+    "command": [
+      "/tmp/onfly-venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--rates",
+      "data/taxas_cambio.csv",
+      "--input",
+      "data/exemplo-validacao.csv",
+      "--output",
+      "/evidence/exemplo.json"
+    ],
+    "returncode": 0,
+    "stdout": "Reservas: 12 | Confirmadas: 9 | Noites: 28 | Total BRL: 7566.00\n",
+    "stderr": ""
+  }
+]

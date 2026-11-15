@@ -1,0 +1,35 @@
+{
+  "docker_command_executed": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--read-only",
+    "--tmpfs",
+    "/tmp",
+    "--mount",
+    "type=bind,src=/Users/joaovictordesousalima/Desktop/onfly-desafio,dst=/workspace,readonly",
+    "--mount",
+    "type=bind,src=/Users/joaovictordesousalima/Desktop/onfly-desafio/entrega/evidencias/python311,dst=/evidence",
+    "--mount",
+    "type=bind,src=/private/tmp/onfly-python311-xdxp9102/wheels,dst=/wheels,readonly",
+    "--workdir",
+    "/workspace",
+    "--env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535",
+    "python",
+    "entrega/evidencias/validar_python311.py"
+  ],
+  "returncode": 0,
+  "image": "python:3.11-slim",
+  "repo_digest": "sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535",
+  "wheels": [
+    "pytest==8.3.4",
+    "iniconfig==2.0.0",
+    "packaging==24.2",
+    "pluggy==1.5.0"
+  ],
+  "observacao": "Metadados do comando efetivamente executado; saídas dos processos internos preservadas em execucoes.json."
+}

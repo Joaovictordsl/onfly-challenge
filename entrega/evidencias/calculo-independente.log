@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "total_reservations": 300,
+    "confirmed_reservations": 235,
+    "cancelled_reservations": 31,
+    "no_show_reservations": 34,
+    "total_room_nights": 1347,
+    "total_amount_brl": "396170.00",
+    "average_nightly_rate_brl": "294.11"
+  },
+  "comparacao": {
+    "report_version": true,
+    "summary": true,
+    "by_month": true,
+    "top_hotels": true,
+    "schema_raiz": true,
+    "offset_minus_03": true
+  }
+}

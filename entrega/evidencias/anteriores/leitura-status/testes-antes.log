@@ -1,0 +1,198 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+____________________ test_cli_reads_every_reservation[201] _____________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-3/test_cli_reads_every_reservati0')
+reservation_count = 201
+
+    @pytest.mark.parametrize("reservation_count", [201, 300, 303])
+    def test_cli_reads_every_reservation(tmp_path, reservation_count):
+        statuses = ("CONFIRMED", "CANCELLED", "NO_SHOW")
+        rows = [
+            {"reservation_id": f"R-{index}", "status": statuses[index % 3]}
+            for index in range(reservation_count)
+        ]
+    
+        report = run_cli(tmp_path, rows)
+        per_status = reservation_count // 3
+    
+>       assert report["summary"] == {
+            "total_reservations": reservation_count,
+            "confirmed_reservations": per_status,
+            "cancelled_reservations": per_status,
+            "no_show_reservations": per_status,
+            "total_room_nights": per_status,
+            "total_amount_brl": f"{per_status * 100}.00",
+            "average_nightly_rate_brl": "100.00",
+        }
+E       AssertionError: assert {'average_nig...ons': 66, ...} == {'average_nig...ons': 67, ...}
+E         
+E         Omitting 3 identical items, use -vv to show
+E         Differing items:
+E         {'no_show_reservations': 66} != {'no_show_reservations': 67}
+E         {'total_reservations': 200} != {'total_reservations': 201}
+E         {'total_amount_brl': '13300.00'} != {'total_amount_brl': '6700.00'}
+E         {'total_room_nights': 133} != {'total_room_nights': 67}
+E         Use -v to get more diff
+
+tests/test_reading_and_billing.py:18: AssertionError
+____________________ test_cli_reads_every_reservation[300] _____________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-3/test_cli_reads_every_reservati1')
+reservation_count = 300
+
+    @pytest.mark.parametrize("reservation_count", [201, 300, 303])
+    def test_cli_reads_every_reservation(tmp_path, reservation_count):
+        statuses = ("CONFIRMED", "CANCELLED", "NO_SHOW")
+        rows = [
+            {"reservation_id": f"R-{index}", "status": statuses[index % 3]}
+            for index in range(reservation_count)
+        ]
+    
+        report = run_cli(tmp_path, rows)
+        per_status = reservation_count // 3
+    
+>       assert report["summary"] == {
+            "total_reservations": reservation_count,
+            "confirmed_reservations": per_status,
+            "cancelled_reservations": per_status,
+            "no_show_reservations": per_status,
+            "total_room_nights": per_status,
+            "total_amount_brl": f"{per_status * 100}.00",
+            "average_nightly_rate_brl": "100.00",
+        }
+E       AssertionError: assert {'average_nig...ons': 66, ...} == {'average_nig...ns': 100, ...}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'no_show_reservations': 66} != {'no_show_reservations': 100}
+E         {'total_room_nights': 133} != {'total_room_nights': 100}
+E         {'total_reservations': 200} != {'total_reservations': 300}
+E         {'cancelled_reservations': 67} != {'cancelled_reservations': 100}...
+E         
+E         ...Full output truncated (3 lines hidden), use '-vv' to show
+
+tests/test_reading_and_billing.py:18: AssertionError
+____________________ test_cli_reads_every_reservation[303] _____________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-3/test_cli_reads_every_reservati2')
+reservation_count = 303
+
+    @pytest.mark.parametrize("reservation_count", [201, 300, 303])
+    def test_cli_reads_every_reservation(tmp_path, reservation_count):
+        statuses = ("CONFIRMED", "CANCELLED", "NO_SHOW")
+        rows = [
+            {"reservation_id": f"R-{index}", "status": statuses[index % 3]}
+            for index in range(reservation_count)
+        ]
+    
+        report = run_cli(tmp_path, rows)
+        per_status = reservation_count // 3
+    
+>       assert report["summary"] == {
+            "total_reservations": reservation_count,
+            "confirmed_reservations": per_status,
+            "cancelled_reservations": per_status,
+            "no_show_reservations": per_status,
+            "total_room_nights": per_status,
+            "total_amount_brl": f"{per_status * 100}.00",
+            "average_nightly_rate_brl": "100.00",
+        }
+E       AssertionError: assert {'average_nig...ons': 66, ...} == {'average_nig...ns': 101, ...}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'no_show_reservations': 66} != {'no_show_reservations': 101}
+E         {'total_room_nights': 133} != {'total_room_nights': 101}
+E         {'total_reservations': 200} != {'total_reservations': 303}
+E         {'cancelled_reservations': 67} != {'cancelled_reservations': 101}...
+E         
+E         ...Full output truncated (3 lines hidden), use '-vv' to show
+
+tests/test_reading_and_billing.py:18: AssertionError
+_____________ test_only_confirmed_reservations_feed_all_aggregates _____________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-3/test_only_confirmed_reservatio0')
+
+    def test_only_confirmed_reservations_feed_all_aggregates(tmp_path):
+        report = run_cli(
+            tmp_path,
+            [
+                {
+                    "reservation_id": "CONFIRMED-1",
+                    "checkin_date": "2025-01-10",
+                    "checkout_date": "2025-01-13",
+                    "rooms": "2",
+                },
+                {
+                    "reservation_id": "CANCELLED-1",
+                    "status": "CANCELLED",
+                    "hotel_id": "H02",
+                    "checkin_date": "2025-02-10",
+                    "checkout_date": "2025-02-13",
+                    "amount": "900.00",
+                },
+                {
+                    "reservation_id": "NO-SHOW-1",
+                    "status": "NO_SHOW",
+                    "hotel_id": "H03",
+                    "checkin_date": "2025-03-10",
+                    "checkout_date": "2025-03-13",
+                    "amount": "800.00",
+                },
+            ],
+        )
+    
+>       assert report["summary"] == {
+            "total_reservations": 3,
+            "confirmed_reservations": 1,
+            "cancelled_reservations": 1,
+            "no_show_reservations": 1,
+            "total_room_nights": 6,
+            "total_amount_brl": "100.00",
+            "average_nightly_rate_brl": "16.67",
+        }
+E       AssertionError: assert {'average_nig...ions': 1, ...} == {'average_nig...ions': 1, ...}
+E         
+E         Omitting 4 identical items, use -vv to show
+E         Differing items:
+E         {'total_room_nights': 9} != {'total_room_nights': 6}
+E         {'total_amount_brl': '900.00'} != {'total_amount_brl': '100.00'}
+E         {'average_nightly_rate_brl': '100.00'} != {'average_nightly_rate_brl': '16.67'}
+E         Use -v to get more diff
+
+tests/test_reading_and_billing.py:58: AssertionError
+_______________ test_status_rules_exclude_cancelled_and_no_show ________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-3/test_status_rules_exclude_canc0')
+
+    def test_status_rules_exclude_cancelled_and_no_show(tmp_path):
+        """Somente CONFIRMED entra nos totais financeiros."""
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "status": "CONFIRMED", "amount": "100.00"},
+                {"reservation_id": "R-2", "status": "CANCELLED", "amount": "50.00"},
+                {"reservation_id": "R-3", "status": "NO_SHOW", "amount": "20.00"},
+            ],
+        )
+        assert report["summary"]["total_reservations"] == 3
+        assert report["summary"]["confirmed_reservations"] == 1
+        assert report["summary"]["cancelled_reservations"] == 1
+        assert report["summary"]["no_show_reservations"] == 1
+>       assert report["summary"]["total_amount_brl"] == "100.00"
+E       AssertionError: assert '120.00' == '100.00'
+E         
+E         - 100.00
+E         ?  ^
+E         + 120.00
+E         ?  ^
+
+tests/test_status_rules.py:20: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_reading_and_billing.py::test_cli_reads_every_reservation[201]
+FAILED tests/test_reading_and_billing.py::test_cli_reads_every_reservation[300]
+FAILED tests/test_reading_and_billing.py::test_cli_reads_every_reservation[303]
+FAILED tests/test_reading_and_billing.py::test_only_confirmed_reservations_feed_all_aggregates
+FAILED tests/test_status_rules.py::test_status_rules_exclude_cancelled_and_no_show
+5 failed in 0.92s

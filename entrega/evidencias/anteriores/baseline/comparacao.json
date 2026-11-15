@@ -1,0 +1,121 @@
+{
+  "reference": "README.md, AMOSTRA:INICIO..AMOSTRA:FIM; report_version from CLI contract",
+  "ignored": [
+    "generated_at value"
+  ],
+  "generated_at_offset_minus_03": true,
+  "matches": false,
+  "difference_count": 22,
+  "differences": [
+    {
+      "path": "$.by_month[0].reservations",
+      "expected": 8,
+      "observed": 9
+    },
+    {
+      "path": "$.by_month[0].room_nights",
+      "expected": 25,
+      "observed": -36
+    },
+    {
+      "path": "$.by_month[0].total_brl",
+      "expected": "6684.00",
+      "observed": "5936.90"
+    },
+    {
+      "path": "$.by_month[1].total_brl",
+      "expected": "882.00",
+      "observed": "25.51"
+    },
+    {
+      "path": "$.summary.average_nightly_rate_brl",
+      "expected": "270.21",
+      "observed": "0.00"
+    },
+    {
+      "path": "$.summary.total_amount_brl",
+      "expected": "7566.00",
+      "observed": "5962.41"
+    },
+    {
+      "path": "$.summary.total_room_nights",
+      "expected": 28,
+      "observed": -33
+    },
+    {
+      "path": "$.top_hotels[0].hotel_id",
+      "expected": "H01",
+      "observed": "H09"
+    },
+    {
+      "path": "$.top_hotels[0].hotel_name",
+      "expected": "Hotel Aurora Paulista",
+      "observed": "Hotel Lisboa, Centro"
+    },
+    {
+      "path": "$.top_hotels[0].total_brl",
+      "expected": "1200.00",
+      "observed": "25.51"
+    },
+    {
+      "path": "$.top_hotels[1].total_brl",
+      "expected": "1084.00",
+      "observed": "36.90"
+    },
+    {
+      "path": "$.top_hotels[2].hotel_id",
+      "expected": "H12",
+      "observed": "H05"
+    },
+    {
+      "path": "$.top_hotels[2].hotel_name",
+      "expected": "Hotel Miami Beach",
+      "observed": "Hotel Recife Plaza"
+    },
+    {
+      "path": "$.top_hotels[2].total_brl",
+      "expected": "1000.00",
+      "observed": "300.00"
+    },
+    {
+      "path": "$.top_hotels[3].hotel_id",
+      "expected": "H10",
+      "observed": "H08"
+    },
+    {
+      "path": "$.top_hotels[3].hotel_name",
+      "expected": "Hotel Madrid, Gran Vía",
+      "observed": "Hotel Iguazu Falls"
+    },
+    {
+      "path": "$.top_hotels[3].room_nights",
+      "expected": 4,
+      "observed": 1
+    },
+    {
+      "path": "$.top_hotels[3].total_brl",
+      "expected": "900.00",
+      "observed": "400.00"
+    },
+    {
+      "path": "$.top_hotels[4].hotel_id",
+      "expected": "H09",
+      "observed": "H07"
+    },
+    {
+      "path": "$.top_hotels[4].hotel_name",
+      "expected": "Hotel Lisboa, Centro",
+      "observed": "Hotel Brasília Tower"
+    },
+    {
+      "path": "$.top_hotels[4].room_nights",
+      "expected": 3,
+      "observed": 2
+    },
+    {
+      "path": "$.top_hotels[4].total_brl",
+      "expected": "882.00",
+      "observed": "600.00"
+    }
+  ]
+}

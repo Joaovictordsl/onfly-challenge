@@ -1,0 +1,39 @@
+[
+  {
+    "name": "cli-principal",
+    "command": [
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "-m",
+      "onfly_report",
+      "--input",
+      "data/reservas_hoteis.csv",
+      "--rates",
+      "data/taxas_cambio.csv",
+      "--output",
+      "output/report.json"
+    ],
+    "returncode": 0,
+    "stdout": "Reservas: 300 | Confirmadas: 235 | Noites: 1347 | Total BRL: 396170.00\n",
+    "stderr": ""
+  },
+  {
+    "name": "calculo-independente",
+    "command": [
+      "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+      "entrega/evidencias/conferir_relatorio.py",
+      "--input",
+      "data/reservas_hoteis.csv",
+      "--rates",
+      "data/taxas_cambio.csv",
+      "--report",
+      "output/report.json",
+      "--reference",
+      "entrega/evidencias/referencia-independente.json",
+      "--comparison",
+      "entrega/evidencias/comparacao-principal.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"summary\": {\n    \"total_reservations\": 300,\n    \"confirmed_reservations\": 235,\n    \"cancelled_reservations\": 31,\n    \"no_show_reservations\": 34,\n    \"total_room_nights\": 1347,\n    \"total_amount_brl\": \"396170.00\",\n    \"average_nightly_rate_brl\": \"294.11\"\n  },\n  \"comparacao\": {\n    \"report_version\": true,\n    \"summary\": true,\n    \"by_month\": true,\n    \"top_hotels\": true,\n    \"schema_raiz\": true,\n    \"offset_minus_03\": true\n  }\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/INVESTIGACAO.md",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/INVESTIGACAO.md",
+    "sha256": "b1e7d7e3a7dcb54a7c03e765ee2b58ad6fa2a575ed9190662043e535d019b645"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/ambiente.json",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/ambiente.json",
+    "sha256": "776a156df2f3e897949072f70129275ab54bb98671f11ad1dd313f313289fcf7"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/pytest.stdout.log",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/pytest.stdout.log",
+    "sha256": "841cb74027a2729f1f5ec2c804e6187b4da0db1ea9c4022b40a956357a897661"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/pytest.execucao.json",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/pytest.execucao.json",
+    "sha256": "82ce2bf3caa55ca0ab124bb8fe2bbceca2f4d1525bbc274c0d5c1f196cf459a6"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/cli-amostra.execucao.json",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/cli-amostra.execucao.json",
+    "sha256": "45c86bac449d15c2b6d0c160b7d5f789dc5bf947af2a8d448d8ccf93999fde00"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/exemplo-observado.json",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/exemplo-observado.json",
+    "sha256": "908f6c143b857c3b2a9b321b097f304f41ca26cabb9709ce8d780107a569276d"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/exemplo-esperado-readme.json",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/exemplo-esperado-readme.json",
+    "sha256": "9264e83e673704781bddf59595e69833e22101b8f6c51ff7e4676af9d545b190"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/comparacao.json",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/comparacao.json",
+    "sha256": "7e3dfb73e9e77db646061aa86dfe70b90d7b9124179baa200cab04e8c2aca313"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/baseline/integridade.json",
+    "origem": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/integridade.json",
+    "sha256": "0c89893c756f81db4ead84c33a82adaa5c839721e0032f76f42d490bcd788368"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/leitura-status/RESULTADO.md",
+    "origem": "output/investigacao-leitura-status/RESULTADO.md",
+    "sha256": "1b020ef12d3fcc71d37d9f5f76a4557554923fa9a0e3f87a959ae12aef18b4c8"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/leitura-status/testes-antes.log",
+    "origem": "output/investigacao-leitura-status/testes-antes.log",
+    "sha256": "dd2e1aaa3ffe3aae3b732890c1d87133797ed6978b4cb25ed50ecf38816119e8"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/leitura-status/testes-relevantes-depois.log",
+    "origem": "output/investigacao-leitura-status/testes-relevantes-depois.log",
+    "sha256": "547282404c58d0e8a8e243f434252a5fc215fc1abb8c974b39e7ccdfe759398d"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/leitura-status/suite-completa-depois.log",
+    "origem": "output/investigacao-leitura-status/suite-completa-depois.log",
+    "sha256": "98728c37cb32ea042712943a31c5161ab45fd96cd9335dd06fcefb1aaad909a1"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/leitura-status/integridade-depois.json",
+    "origem": "output/investigacao-leitura-status/integridade-depois.json",
+    "sha256": "60671556ee18333bf51aa6867ede1b4a83104ad606bfe471631d4a40916dc384"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/noites-cambio/RESULTADO.md",
+    "origem": "output/investigacao-noites-cambio/RESULTADO.md",
+    "sha256": "75826e09aa86726193838141a02a9191ed101acddc4847fb6fbfeb015179bf58"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/noites-cambio/testes-antes.log",
+    "origem": "output/investigacao-noites-cambio/testes-antes.log",
+    "sha256": "3a8cc55c051238d6c34b6904397dcfd16249846a6dc86846781d4a18910c598a"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/noites-cambio/testes-relevantes-depois.log",
+    "origem": "output/investigacao-noites-cambio/testes-relevantes-depois.log",
+    "sha256": "43cbfad85b61c7296d5e502eb5d3832cd884e8e7f6a0d46d8c2e390c2e5681fc"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/noites-cambio/suite-completa-depois.log",
+    "origem": "output/investigacao-noites-cambio/suite-completa-depois.log",
+    "sha256": "e312cc38c082124deab8cbec97befd2b7d7d65a56725c03746729c5aecf621a3"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/noites-cambio/comparacao-readme.json",
+    "origem": "output/investigacao-noites-cambio/comparacao-readme.json",
+    "sha256": "5b64934befd4b382ea23f0d413aaf06678798094cbbdab490e2c03d4f55e4614"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/RESULTADO.md",
+    "origem": "output/investigacao-ranking/RESULTADO.md",
+    "sha256": "26cabd8a3cf1094899f7e50006eb03e1f93fe9c1418098c2843b427ff50ab3b2"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/testes-antes.log",
+    "origem": "output/investigacao-ranking/testes-antes.log",
+    "sha256": "2246290930cb55eae99dbcf16445035db80a3ebe40f169a85c4835e191eed2a8"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/testes-relevantes-depois.log",
+    "origem": "output/investigacao-ranking/testes-relevantes-depois.log",
+    "sha256": "3203da9a6568ec5379469a9996e349706c94be424dac52aab20f1a055bba846a"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/suite-completa-depois.log",
+    "origem": "output/investigacao-ranking/suite-completa-depois.log",
+    "sha256": "2ee6ac95c3043a29a8a607c3b2b8ec369812791129128619cd0d4f89551f1b07"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/referencia-readme.json",
+    "origem": "output/investigacao-ranking/referencia-readme.json",
+    "sha256": "9264e83e673704781bddf59595e69833e22101b8f6c51ff7e4676af9d545b190"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/exemplo.json",
+    "origem": "output/investigacao-ranking/exemplo.json",
+    "sha256": "de5dc7ef392443bf4bb4a1587c164da242524cb8c0d7c7e67ca26357b995d7ff"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/comparacao-readme.json",
+    "origem": "output/investigacao-ranking/comparacao-readme.json",
+    "sha256": "c603932512ca7dc851aa49253492829ad8aa1979346150d6194ebc2f95da6826"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/execucoes-cli.json",
+    "origem": "output/investigacao-ranking/execucoes-cli.json",
+    "sha256": "c9e4e3fd51ef2910c93d58b5d86de636222b3934f78a9ea8cb74d12fb1b49f28"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/verificar_contrato.py",
+    "origem": "output/investigacao-ranking/verificar_contrato.py",
+    "sha256": "4340fc55350afb6788aaeee2959e8268401483ca0af49e8ad81fe46f784024d0"
+  },
+  {
+    "arquivo": "entrega/evidencias/anteriores/ranking/integridade-depois.json",
+    "origem": "output/investigacao-ranking/integridade-depois.json",
+    "sha256": "518c380b393f3fbc7738472d439118e0f1d77e1804d14bd3ceba900070ae911e"
+  }
+]

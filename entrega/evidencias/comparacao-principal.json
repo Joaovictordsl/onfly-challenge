@@ -1,0 +1,8 @@
+{
+  "report_version": true,
+  "summary": true,
+  "by_month": true,
+  "top_hotels": true,
+  "schema_raiz": true,
+  "offset_minus_03": true
+}

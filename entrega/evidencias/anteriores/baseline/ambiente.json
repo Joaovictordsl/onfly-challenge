@@ -1,0 +1,9 @@
+{
+  "source": "/Users/joaovictordesousalima/Downloads/onfly-desafio",
+  "evidence": "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z",
+  "venv": "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv",
+  "created_at_utc": "20261115T222717Z",
+  "bootstrap_python": "3.13.9 (v3.13.9:8183fa5e3f7, Oct 14 2025, 10:27:13) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "requirements_dev": "pytest==8.3.4\nruff==0.8.4\n",
+  "pyproject": "[project]\nname = \"onfly-report\"\nversion = \"1.0.0\"\ndescription = \"Consolidador de reservas de hotel da Onfly\"\nrequires-python = \">=3.11\"\n\n[tool.ruff]\nline-length = 120\ntarget-version = \"py311\"\nsrc = [\"src\"]\n\n[tool.ruff.lint]\nselect = [\"E\", \"F\", \"I\"]\n\n[tool.pytest.ini_options]\ntestpaths = [\"tests\"]\npythonpath = [\"src\"]\naddopts = \"-ra\"\n"
+}

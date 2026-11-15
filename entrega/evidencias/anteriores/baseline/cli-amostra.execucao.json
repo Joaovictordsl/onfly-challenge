@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/onfly-baseline-s8hn7ifh/venv/bin/python",
+    "-m",
+    "onfly_report",
+    "--input",
+    "data/exemplo-validacao.csv",
+    "--rates",
+    "data/taxas_cambio.csv",
+    "--output",
+    "/Users/joaovictordesousalima/Desktop/onfly-challenge/investigacao/onfly-baseline-20261115T222717Z/exemplo-observado.json"
+  ],
+  "cwd": "/Users/joaovictordesousalima/Downloads/onfly-desafio",
+  "exit_code": 0,
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "/Users/joaovictordesousalima/Downloads/onfly-desafio/src"
+  }
+}

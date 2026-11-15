@@ -1,0 +1,239 @@
+FFFFFFFF.F                                                               [100%]
+=================================== FAILURES ===================================
+______________________ test_nights_across_month_boundary _______________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-6/test_nights_across_month_bound0')
+
+    def test_nights_across_month_boundary(tmp_path):
+        """A diferença de datas considera a virada de mês, não o dia do mês."""
+        report = run_cli(
+            tmp_path,
+            [
+                {
+                    "reservation_id": "R-1",
+                    "checkin_date": "2025-01-30",
+                    "checkout_date": "2025-02-02",
+                    "rooms": "1",
+                }
+            ],
+        )
+>       assert report["summary"]["total_room_nights"] == 3
+E       assert -28 == 3
+
+tests/test_nights.py:19: AssertionError
+_______________________ test_currency_conversion_to_brl ________________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-6/test_currency_conversion_to_br0')
+
+    def test_currency_conversion_to_brl(tmp_path):
+        """Multiplica o valor pela taxa, sem inverter a operação."""
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "currency": "BRL", "amount": "100.00"},
+                {"reservation_id": "R-2", "currency": "USD", "amount": "100.00"},
+            ],
+        )
+>       assert report["summary"]["total_amount_brl"] == "642.00"
+E       AssertionError: assert '118.45' == '642.00'
+E         
+E         - 642.00
+E         + 118.45
+
+tests/test_currency.py:15: AssertionError
+_______________________ test_regression_report_on_sample _______________________
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-6/test_regression_report_on_samp0')
+
+    def test_regression_report_on_sample(tmp_path):
+        """Relatório completo de uma amostra pequena, com status, noites e câmbio."""
+        report = run_cli(
+            tmp_path,
+            [
+                {
+                    "reservation_id": "R-1",
+                    "amount": "1000.00",
+                    "checkin_date": "2025-01-10",
+                    "checkout_date": "2025-01-13",
+                },
+                {"reservation_id": "R-2", "status": "CANCELLED", "amount": "500.00"},
+                {
+                    "reservation_id": "R-3",
+                    "currency": "USD",
+                    "amount": "100.00",
+                    "checkin_date": "2025-01-20",
+                    "checkout_date": "2025-01-22",
+                },
+            ],
+        )
+>       assert report["summary"] == {
+            "total_reservations": 3,
+            "confirmed_reservations": 2,
+            "cancelled_reservations": 1,
+            "no_show_reservations": 0,
+            "total_room_nights": 5,
+            "total_amount_brl": "1542.00",
+            "average_nightly_rate_brl": "308.40",
+        }
+E       AssertionError: assert {'average_nig...ions': 0, ...} == {'average_nig...ions': 0, ...}
+E         
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'total_amount_brl': '1018.45'} != {'total_amount_brl': '1542.00'}
+E         {'average_nightly_rate_brl': '203.69'} != {'average_nightly_rate_brl': '308.40'}
+E         Use -v to get more diff
+
+tests/test_regression_report.py:27: AssertionError
+_____ test_room_nights_use_full_dates_and_rooms[2025-01-30-2025-02-02-3-9] _____
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-6/test_room_nights_use_full_date0')
+checkin = '2025-01-30', checkout = '2025-02-02', rooms = '3'
+expected_nights = 9
+
+    @pytest.mark.parametrize(
+        ("checkin", "checkout", "rooms", "expected_nights"),
+        [
+            ("2025-01-30", "2025-02-02", "3", 9),
+            ("2024-12-30", "2025-01-02", "2", 6),
+            ("2024-02-28", "2024-03-01", "2", 4),
+        ],
+    )
+    def test_room_nights_use_full_dates_and_rooms(tmp_path, checkin, checkout, rooms, expected_nights):
+        report = run_cli(
+            tmp_path,
+            [{"checkin_date": checkin, "checkout_date": checkout, "rooms": rooms}],
+        )
+    
+>       assert report["summary"]["total_room_nights"] == expected_nights
+E       assert -84 == 9
+
+tests/test_nights_and_money.py:25: AssertionError
+_____ test_room_nights_use_full_dates_and_rooms[2024-12-30-2025-01-02-2-6] _____
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-6/test_room_nights_use_full_date1')
+checkin = '2024-12-30', checkout = '2025-01-02', rooms = '2'
+expected_nights = 6
+
+    @pytest.mark.parametrize(
+        ("checkin", "checkout", "rooms", "expected_nights"),
+        [
+            ("2025-01-30", "2025-02-02", "3", 9),
+            ("2024-12-30", "2025-01-02", "2", 6),
+            ("2024-02-28", "2024-03-01", "2", 4),
+        ],
+    )
+    def test_room_nights_use_full_dates_and_rooms(tmp_path, checkin, checkout, rooms, expected_nights):
+        report = run_cli(
+            tmp_path,
+            [{"checkin_date": checkin, "checkout_date": checkout, "rooms": rooms}],
+        )
+    
+>       assert report["summary"]["total_room_nights"] == expected_nights
+E       assert -56 == 6
+
+tests/test_nights_and_money.py:25: AssertionError
+_____ test_room_nights_use_full_dates_and_rooms[2024-02-28-2024-03-01-2-4] _____
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-6/test_room_nights_use_full_date2')
+checkin = '2024-02-28', checkout = '2024-03-01', rooms = '2'
+expected_nights = 4
+
+    @pytest.mark.parametrize(
+        ("checkin", "checkout", "rooms", "expected_nights"),
+        [
+            ("2025-01-30", "2025-02-02", "3", 9),
+            ("2024-12-30", "2025-01-02", "2", 6),
+            ("2024-02-28", "2024-03-01", "2", 4),
+        ],
+    )
+    def test_room_nights_use_full_dates_and_rooms(tmp_path, checkin, checkout, rooms, expected_nights):
+        report = run_cli(
+            tmp_path,
+            [{"checkin_date": checkin, "checkout_date": checkout, "rooms": rooms}],
+        )
+    
+>       assert report["summary"]["total_room_nights"] == expected_nights
+E       assert -54 == 4
+
+tests/test_nights_and_money.py:25: AssertionError
+________ test_conversion_preserves_decimal_precision[0.01-5.42-0.0542] _________
+
+amount = '0.01', rate = '5.42', expected = '0.0542'
+
+    @pytest.mark.parametrize(
+        ("amount", "rate", "expected"),
+        [
+            ("0.01", "5.42", "0.0542"),
+            ("9007199254740993.01", "1.000000", "9007199254740993.01"),
+        ],
+    )
+    def test_conversion_preserves_decimal_precision(amount, rate, expected):
+        result = convert_to_brl(Decimal(amount), "USD", {"USD": Decimal(rate)})
+    
+        assert isinstance(result, Decimal)
+>       assert result == Decimal(expected)
+E       AssertionError: assert Decimal('0.001845018450184502') == Decimal('0.0542')
+E        +  where Decimal('0.0542') = Decimal('0.0542')
+
+tests/test_nights_and_money.py:43: AssertionError
+_ test_conversion_preserves_decimal_precision[9007199254740993.01-1.000000-9007199254740993.01] _
+
+amount = '9007199254740993.01', rate = '1.000000'
+expected = '9007199254740993.01'
+
+    @pytest.mark.parametrize(
+        ("amount", "rate", "expected"),
+        [
+            ("0.01", "5.42", "0.0542"),
+            ("9007199254740993.01", "1.000000", "9007199254740993.01"),
+        ],
+    )
+    def test_conversion_preserves_decimal_precision(amount, rate, expected):
+        result = convert_to_brl(Decimal(amount), "USD", {"USD": Decimal(rate)})
+    
+        assert isinstance(result, Decimal)
+>       assert result == Decimal(expected)
+E       AssertionError: assert Decimal('9007199254740994.0') == Decimal('9007199254740993.01')
+E        +  where Decimal('9007199254740993.01') = Decimal('9007199254740993.01')
+
+tests/test_nights_and_money.py:43: AssertionError
+_____ test_money_rounds_half_up_only_after_aggregation[USD-0.01-0.11-0.05] _____
+
+tmp_path = PosixPath('/private/var/folders/2b/tk8q97s15t5ct94xt5fcxvf00000gn/T/pytest-of-joaovictordesousalima/pytest-6/test_money_rounds_half_up_only1')
+currency = 'USD', amount = '0.01', expected_total = '0.11'
+expected_average = '0.05'
+
+    @pytest.mark.parametrize(
+        ("currency", "amount", "expected_total", "expected_average"),
+        [
+            ("BRL", "1.005", "2.01", "1.01"),
+            ("USD", "0.01", "0.11", "0.05"),
+        ],
+    )
+    def test_money_rounds_half_up_only_after_aggregation(tmp_path, currency, amount, expected_total, expected_average):
+        report = run_cli(
+            tmp_path,
+            [
+                {"reservation_id": "R-1", "currency": currency, "amount": amount},
+                {"reservation_id": "R-2", "currency": currency, "amount": amount},
+            ],
+        )
+    
+>       assert report["summary"]["total_amount_brl"] == expected_total
+E       AssertionError: assert '0.00' == '0.11'
+E         
+E         - 0.11
+E         + 0.00
+
+tests/test_nights_and_money.py:62: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_nights.py::test_nights_across_month_boundary - assert -28 == 3
+FAILED tests/test_currency.py::test_currency_conversion_to_brl - AssertionErr...
+FAILED tests/test_regression_report.py::test_regression_report_on_sample - As...
+FAILED tests/test_nights_and_money.py::test_room_nights_use_full_dates_and_rooms[2025-01-30-2025-02-02-3-9]
+FAILED tests/test_nights_and_money.py::test_room_nights_use_full_dates_and_rooms[2024-12-30-2025-01-02-2-6]
+FAILED tests/test_nights_and_money.py::test_room_nights_use_full_dates_and_rooms[2024-02-28-2024-03-01-2-4]
+FAILED tests/test_nights_and_money.py::test_conversion_preserves_decimal_precision[0.01-5.42-0.0542]
+FAILED tests/test_nights_and_money.py::test_conversion_preserves_decimal_precision[9007199254740993.01-1.000000-9007199254740993.01]
+FAILED tests/test_nights_and_money.py::test_money_rounds_half_up_only_after_aggregation[USD-0.01-0.11-0.05]
+9 failed, 1 passed in 1.18s

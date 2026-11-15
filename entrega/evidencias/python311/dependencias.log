@@ -1,0 +1,7 @@
+Looking in links: /wheels
+Processing /wheels/pytest-8.3.4-py3-none-any.whl
+Processing /wheels/iniconfig-2.0.0-py3-none-any.whl (from pytest==8.3.4)
+Processing /wheels/packaging-24.2-py3-none-any.whl (from pytest==8.3.4)
+Processing /wheels/pluggy-1.5.0-py3-none-any.whl (from pytest==8.3.4)
+Installing collected packages: pluggy, packaging, iniconfig, pytest
+Successfully installed iniconfig-2.0.0 packaging-24.2 pluggy-1.5.0 pytest-8.3.4

@@ -1,0 +1,8 @@
+{
+  "fonte": "Plugin GitHub: search_repositories",
+  "consulta": "repo:Joaovictordsl/onfly-challenge",
+  "repositorio": "Joaovictordsl/onfly-challenge",
+  "url": "https://github.com/Joaovictordsl/onfly-challenge",
+  "visibility": "public",
+  "observacao": "Consulta somente de leitura. Não comprova envio pelo formulário nem publicação dos arquivos locais desta etapa."
+}
